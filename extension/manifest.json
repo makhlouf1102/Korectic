@@ -1,5 +1,8 @@
 {
     "name": "Korektik",
+    "optional_permissions": [
+        "tabs"
+    ],
     "version": "1.0.0",
     "description": "A simple plugin to check my spelling in French without changing the way people write",
     "manifest_version": 3,
