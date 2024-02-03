@@ -1,7 +1,7 @@
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('alertButton').addEventListener('click', hello);
-});
-
-function hello() {
-    window.alert("Hello World !");
-}
+chrome.action.onClicked.addListener((tab) => {
+    chrome.scripting.executeScript({
+      target: {tabId: tab.id},
+      files: ['content.js']
+    });
+  });
+  
