@@ -1,0 +1,164 @@
+:root {
+    --text: #040316;
+    --background: #fbfbfe;
+    --primary: #0bf45d;
+    --secondary: #038c3e;
+    --accent: #02745f;
+    --linearPrimarySecondary: linear-gradient(#0bf45d, #038c3e);
+    --linearPrimaryAccent: linear-gradient(#0bf45d, #02745f);
+    --linearSecondaryAccent: linear-gradient(#038c3e, #02745f);
+    --radialPrimarySecondary: radial-gradient(#0bf45d, #038c3e);
+    --radialPrimaryAccent: radial-gradient(#0bf45d, #02745f);
+    --radialSecondaryAccent: radial-gradient(#038c3e, #02745f);
+    --fullWidth : 350px;
+    --fullHeight : 400px;
+}
+
+/* --------------------------------------------------------------------------------------------------------------------- */
+main {
+    background-color: var(--background);
+    height: 100%;
+    width: 100%;
+}
+
+.page {
+    padding: 8px;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding and margin */
+body,
+h1, h2, h3, h4, h5, h6,
+p, figure, blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+/* Improve typography */
+html {
+  font-size: 100%; /* Respect user's font-size settings */
+}
+
+/* --------------------------------------------------------------------------------------------------------------------- */
+body {
+    font-family: 'Poppins';
+    font-weight: 400;
+    width: var(--fullWidth);
+    height: var(--fullHeight);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Poppins';
+    font-weight: 700;
+    color: var(--text);
+}
+
+html {
+    font-size: 100%;
+}
+
+/* 16px */
+
+h1 {
+    font-size: 1.802rem;
+    /* 28.8px */
+}
+
+h2 {
+    font-size: 1.602rem;
+    /* 25.6px */
+}
+
+h3 {
+    font-size: 1.424rem;
+    /* 22.72px */
+}
+
+h4 {
+    font-size: 1.266rem;
+    /* 20.32px */
+}
+
+h5 {
+    font-size: 1.125rem;
+    /* 18.08px */
+}
+
+small {
+    font-size: 0.889rem;
+    /* 14.24px */
+}
+
+.primary-button {
+    padding: 1em 2em;
+    background-color: var(--primary);
+    color: var(--secondary);
+    border-radius: 6px;
+    transition: transform ease 0.2s, box-shadow ease 0.2s;
+    display: inline-block;
+    z-index: 2;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.primary-button:hover {
+    transform: translate(0, -3px);
+    box-shadow: 0 20px 80px -10px var(--primary);
+}
+
+/* ------------------------------------------- Inputs -------------------------------------------  */
+.long-text-input {
+    width: 100%; 
+    /* Full width to fit container */
+    padding: 0.50em; /* Comfortable padding */
+    font-size: 1rem; /* Standard font size */
+    color: var(--text); /* Text color from :root */
+    background-color: var(--background); /* Background color from :root */
+    border: 2px solid var(--secondary); /* Border color from :root */
+    border-radius: 4px; /* Slightly rounded corners */
+    transition: border-color 0.3s ease-in-out; /* Smooth transition for border color */
+}
+
+.long-text-input:focus {
+    border-color: var(--primary); /* Change border color to primary on focus */
+    outline: none; /* Remove the default outline */
+}
+
+.long-text-input::placeholder {
+    color: var(--accent); /* Placeholder text color from :root */
+    opacity: 1; /* Ensure placeholder is fully visible */
+}
+
+/* ------------------------------------------- Link -------------------------------------------  */
+.small-link {
+    color: var(--accent); /* Primary color for the link */
+    text-decoration: none; /* Removing underline to style from scratch */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Smooth transition for hover effects */
+}
+
+.small-link:hover, .small-link:focus {
+    text-decoration: underline; /* Ensure no underline appears */
+}
+

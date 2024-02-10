@@ -1,18 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="api-key-page.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="navigation-bar.css">
     <title>Korectic</title>
 </head>
-<body>
-    <div>
-        <button id="alertButton">
-            Alert Me !
-        </button>
-    </div>
 
-    <script src="content.js"></script>
+<body>
+    <main>
+        <div class="header-logo-container">
+            <h1>Korectic</h1>
+        </div>
+        <div class="navigation-bar">
+            <div class="section-button-api-key curr-page">
+                <p>API-Key</p>
+            </div>
+            <div class="section-button-product-key">
+                <p>Product-Key</p>
+            </div>
+        </div>
+        <div class="page" id="api-key-page">
+            <div class="api-key-section-container">
+                <h5 class="instructions">Enter your api key here</h5>
+                <input type="text" class="long-text-input" name="api-key-input" id="api-key-input">
+                <p>
+                    <a href="#" class="small-link">I want to know more about the API Key</a>
+                </p>
+                <a class="primary-button" id="save-api-key" style="margin-top: 1rem;">
+                    <strong>
+                        Save
+                    </strong>
+                </a>
+                <br>
+                <p style="color: red;">N.B. : Your API key is saved in your system not on our servers</p>
+            </div>
+
+        </div>
+        <footer>
+            <p>© 2024 Korectic. All rights reserved.</p>
+            <span class="footer-links">
+                <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Contact Us</a>
+            </span>
+        </footer>
+    </main>
+    <script src="script.js"></script>
 </body>
+
 </html>
