@@ -27,9 +27,9 @@ const checkApiKeyValidity = async (apiKey) => {
 
     try {
         const response = await fetch(url, { headers });
-        return response.ok; // Returns true if the API key is valid, false otherwise
+        if (response.ok) return true; // Returns true if the API key is valid, 
+        return false;
     } catch (error) {
-        console.error('An error occurred while checking the API key:', error);
         return false; // Assume the key is invalid if an error occurs
     }
 };
@@ -46,9 +46,8 @@ const checkProductKeyValidity = async (apiKey) => {
 
 // Function to show validation messages
 const showValidationMessage = (isValid) => {
-    const invalidMessageElement = document.querySelector(".page .api-key-section-container p[style*='color: red;']");
-    const validMessageElement = document.querySelector(".page .api-key-section-container p[style*='color: var(--primary);']");
-
+    const invalidMessageElement = document.querySelector("#api-key-invalid");
+    const validMessageElement = document.querySelector("#api-key-valid");
     if (isValid) {
         validMessageElement.style.display = 'block';
         invalidMessageElement.style.display = 'none';
@@ -105,6 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (result.apiKey) {
             // If the API key exists, display it in the input field
             document.getElementById('api-key-input').value = result.apiKey;
+            // alert(result.apiKey)
         } else {
             document.getElementById('api-key-input').value = 'nothing';
 
