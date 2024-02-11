@@ -30,6 +30,8 @@
             <div class="api-key-section-container">
                 <h5 class="instructions">Enter your api key here</h5>
                 <input type="text" class="long-text-input" name="api-key-input" id="api-key-input">
+                <p style="color: red; display: none;">Invalid API-key</p>
+                <p style="color: var(--primary); display: none;">Valid API-key</p>
                 <p>
                     <a href="#" class="small-link">I want to know more about the API Key</a>
                 </p>
@@ -39,7 +41,7 @@
                     </strong>
                 </a>
                 <br>
-                <p style="color: red;">N.B. : Your API key is saved in your system not on our servers</p>
+                <!-- <p style="color: red;">N.B. : Your API key is saved in your system not on our servers</p> -->
             </div>
 
         </div>
@@ -50,7 +52,7 @@
             </span>
         </footer>
     </main>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>
