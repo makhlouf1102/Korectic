@@ -1,3 +1,23 @@
+// Function to toggle pages
+const togglePage = (showApiKeyPage) => {
+    const apiKeyPage = document.getElementById('api-key-page');
+    const productKeyPage = document.getElementById('product-key-page');
+    const apiKeyButton = document.getElementById('section-button-api-key');
+    const productKeyButton = document.getElementById('section-button-product-key');
+
+    if (showApiKeyPage) {
+        apiKeyPage.style.display = 'block';
+        productKeyPage.style.display = 'none';
+        apiKeyButton.classList.add('curr-page');
+        productKeyButton.classList.remove('curr-page');
+    } else {
+        apiKeyPage.style.display = 'none';
+        productKeyPage.style.display = 'block';
+        apiKeyButton.classList.remove('curr-page');
+        productKeyButton.classList.add('curr-page');
+    }
+};
+
 // Asynchronously check the API key's validity
 const checkApiKeyValidity = async (apiKey) => {
     const url = 'https://api.openai.com/v1/models';
@@ -14,6 +34,16 @@ const checkApiKeyValidity = async (apiKey) => {
     }
 };
 
+// Asynchronously check the API key's validity
+const checkProductKeyValidity = async (apiKey) => {
+    const url = 'https://api.openai.com/v1/models';
+    const headers = {
+        'Authorization': `Bearer ${apiKey}`
+    };
+
+    // complete the code here 
+};
+
 // Function to show validation messages
 const showValidationMessage = (isValid) => {
     const invalidMessageElement = document.querySelector(".page .api-key-section-container p[style*='color: red;']");
@@ -28,23 +58,36 @@ const showValidationMessage = (isValid) => {
     }
 };
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+
+    // Toggle to API key page
+    const apiKeyButton = document.getElementById('section-button-api-key');
+    apiKeyButton.addEventListener('click', function () {
+        togglePage(true);
+    });
+
+    // Toggle to Product key page
+    const productKeyButton = document.getElementById('section-button-product-key');
+    productKeyButton.addEventListener('click', function () {
+        togglePage(false);
+    });
+
     // Load and display the API key if it's already saved
-    chrome.storage.local.get('apiKey', function(result) {
+    chrome.storage.local.get('apiKey', function (result) {
         if (result.apiKey) {
             document.getElementById('api-key-input').value = result.apiKey;
         }
     });
 
     var saveButton = document.getElementById('save-api-key');
-    saveButton.addEventListener('click', async function() {
+    saveButton.addEventListener('click', async function () {
         var apiKey = document.getElementById('api-key-input').value;
 
         // Validate the API key before saving
         const isValid = await checkApiKeyValidity(apiKey);
         if (isValid) {
             // Save the API key in the local storage if it's valid
-            chrome.storage.local.set({'apiKey': apiKey}, function() {
+            chrome.storage.local.set({ 'apiKey': apiKey }, function () {
                 console.log('API key saved');
                 showValidationMessage(true);
             });
@@ -55,10 +98,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Attempt to retrieve the API key from local storage
-    
-    chrome.storage.local.get('apiKey', function(result) {
+
+    chrome.storage.local.get('apiKey', function (result) {
         if (result.apiKey) {
             // If the API key exists, display it in the input field
             document.getElementById('api-key-input').value = result.apiKey;
@@ -70,3 +113,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+

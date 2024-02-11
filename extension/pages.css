@@ -24,7 +24,7 @@
     align-items: center;
 }
 
-.api-key-section-container{
+.section-container{
     gap: 8px;
     display: flex;
     flex-direction: column;

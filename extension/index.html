@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="api-key-page.css">
+    <link rel="stylesheet" href="pages.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="navigation-bar.css">
     <title>Korectic</title>
@@ -19,15 +19,15 @@
             <h1>Korectic</h1>
         </div>
         <div class="navigation-bar">
-            <div class="section-button-api-key curr-page">
+            <div class="section-button-api-key curr-page" id="section-button-api-key">
                 <p>API-Key</p>
             </div>
-            <div class="section-button-product-key">
+            <div class="section-button-product-key" id="section-button-product-key">
                 <p>Product-Key</p>
             </div>
         </div>
         <div class="page" id="api-key-page">
-            <div class="api-key-section-container">
+            <div class="section-container">
                 <h5 class="instructions">Enter your api key here</h5>
                 <input type="text" class="long-text-input" name="api-key-input" id="api-key-input">
                 <p style="color: red; display: none;">Invalid API-key</p>
@@ -37,13 +37,30 @@
                 </p>
                 <a class="primary-button" id="save-api-key" style="margin-top: 1rem;">
                     <strong>
-                        Save
+                        Validate
                     </strong>
                 </a>
                 <br>
                 <!-- <p style="color: red;">N.B. : Your API key is saved in your system not on our servers</p> -->
             </div>
-
+        </div>
+        <div class="page" id="product-key-page" style="display: none;">
+            <div class="section-container">
+                <h5 class="instructions">Enter your product key here</h5>
+                <input type="text" class="long-text-input" name="product-key-input" id="product-key-input">
+                <p style="color: red; display: none;">Invalid Prodcut-key</p>
+                <p style="color: var(--primary); display: none;">Valid Prodcut-key</p>
+                <p>
+                    <a href="#" class="small-link">I want to know more about the Product-Key</a>
+                </p>
+                <a class="primary-button" id="save-api-key" style="margin-top: 1rem;">
+                    <strong>
+                        Validate
+                    </strong>
+                </a>
+                <br>
+                <!-- <p style="color: red;">N.B. : Your API key is saved in your system not on our servers</p> -->
+            </div>
         </div>
         <footer>
             <p>© 2024 Korectic. All rights reserved.</p>
