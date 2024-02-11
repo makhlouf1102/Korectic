@@ -55,9 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     // Attempt to retrieve the API key from local storage
     
