@@ -1,12 +1,49 @@
 {
-    "name": "Korektik",
-    "permissions": ["storage"],
-    "version": "1.0.0",
-    "description": "A simple plugin to check my spelling in French without changing the way people write",
-    "manifest_version": 3,
-    "author": "Makhlouf H.",
-    "action": {
-        "default_popup": "index.html",
-        "default_title": "Korektik"
+  "name": "Korectik",
+  "description": "Uses the chrome.commands API by creating a new keyboard macro for switching tabs in the browser window.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "scripting", 
+    "activeTab",
+    "storage",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["modal.css"],
+      "js": ["modal.js"]
     }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "images/tabFlipper16.png",
+      "32": "images/tabFlipper32.png",
+      "48": "images/tabFlipper48.png",
+      "128": "images/tabFlipper128.png"
+    },
+    "default_title": "Press Ctrl(Win)/Command(Mac) + Shift + K to make apear a pop up to correct your text, and manage the extension"
+  },
+  "commands": {
+    "corrector_modal": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+K",
+        "mac": "Command+Shift+K"
+      },
+      "description": "Make apear the pop up modal "
+    }
+  },
+  "icons": {
+    "16": "images/tabFlipper16.png",
+    "32": "images/tabFlipper32.png",
+    "48": "images/tabFlipper48.png",
+    "128": "images/tabFlipper128.png"
+  }
 }

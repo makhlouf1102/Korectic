@@ -1,0 +1,21 @@
+<nav>
+    <ul>
+        <li><a href="#" onclick="showSection(0)">Settings</a></li>
+        <li><a href="#" onclick="showSection(1)">Corrector</a></li>
+    </ul>
+</nav>
+<div style="display:none;">
+    <input type="text" placeholder="API Key 1">
+    <input type="text" placeholder="API Key 2">
+</div>
+<div style="display:none;">
+    <input type="text" placeholder="Enter text">
+    <button>Submit</button>
+</div>
+<script>
+    function showSection(index) {
+        document.querySelectorAll('body > div').forEach((div, i) => {
+            div.style.display = i === index ? 'block' : 'none';
+        });
+    }
+</script>
