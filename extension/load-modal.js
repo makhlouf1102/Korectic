@@ -73,10 +73,6 @@ var modalHtml = `
                 <p>Correct</p>
                 ${correctSVG}
             </button>
-            <button class="korectic-modal-action-button korectic-refresh-button">
-                <p>Refresh</p>
-                ${refreshSVG}
-            </button>
         </footer>
         <div class="korectic-follow-me">
             <a href="https://twitter.com/mak_1102?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @mak_1102</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
