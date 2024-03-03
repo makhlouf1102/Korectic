@@ -19,7 +19,7 @@
 }
 
 #myModal {
-    display: block;
+    display: none;
     position: fixed !important;
     left: 0 !important;
     top: 0 !important;
