@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --primary: rgb(11, 244, 93);
+    --primary-hover: #0b5ed7;
+    --primary-hover-boder: #0a58ca;
+    --accent : #8bfde8;
+    --background: #010104;
+    --secondary-30: hsl(146, 96%, 72%, 30%);
+    --secondary: #73fcae;
+
+}
+
+.korectic-follow-me {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+}
+
+#myModal {
+    display: block;
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: auto !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    z-index: 3000;
+}
+
+#myModal * {
+    font-family: 'Poppins', sans-serif;
+}
+
+#myModal h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: black;
+}
+
+.korectic-modal-title {
+    font-weight: bold;
+    font-size: 52px;
+    background: linear-gradient(120deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#myModal button {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 128px;
+    height: 52px;
+
+    cursor: pointer;
+    outline: 0;
+    border: 1px solid transparent;
+    padding: 0 12px;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: transform 0.3s ease;
+}
+
+#myModal button:hover {
+    transform: translateY(-5px);
+} 
+
+.korectic-modal-api-key-button {
+    font-weight: 700;
+    color: white;
+    background-color: var(--secondary-30);
+}
+.korectic-modal-api-key-button p {
+    color: white;
+}
+
+.korectic-correct-button {
+    background-color: var(--primary);
+    color: var(--background);
+    font-weight: 700;
+    transition: all 0.3s ease-in-out;
+}
+
+.korectic-refresh-button {
+    display: none;
+}
+
+.korectic-refresh-button p{
+    color: white;
+}
+
+.korectic-correct-button:hover {
+    box-shadow: 0 15px 30px rgba(11, 244, 93, 0.5);
+}
+
+.korectic-refresh-button {
+    font-weight: 700;
+    color: white;
+    background-color: var(--secondary-30);
+}
+
+.korectic-modal-content {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background);
+    max-width: 50vw;
+    padding: 32px;
+    margin: 30px auto;
+    border-radius: 4px;
+}
+
+
+.korectic-modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.korectic-textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    background-color: white;
+    color: black;
+}
+
+.korectic-textarea:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0px 0px 10px 2px var(--primary);
+}
+
+.korectic-modal-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.korectic-modal-footer {
+    margin-top: 16px;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+}

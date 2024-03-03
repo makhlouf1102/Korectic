@@ -3,8 +3,20 @@
   "description": "Uses the chrome.commands API by creating a new keyboard macro for switching tabs in the browser window.",
   "version": "1.0",
   "manifest_version": 3,
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "svg/settings.svg",
+        "svg/correct.svg",
+        "svg/refresh.svg"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
   "permissions": [
-    "scripting", 
+    "scripting",
     "activeTab",
     "storage",
     "webNavigation"
@@ -17,17 +29,40 @@
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "css": ["modal.css"],
-      "js": ["modal.js"]
+      "matches": [
+        "https://twitter.com/*",
+        "https://x.com/*",
+        "https://www.linkedin.com/*"
+      ],
+      "css": [
+        "css/modal-x.css"
+      ],
+      "js": [
+        "load-modal.js",
+        "show-modal.js",
+        "corrector.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.linkedin.com/*"
+      ],
+      "css": [
+        "css/modal-x.css"
+      ],
+      "js": [
+        "load-modal.js",
+        "show-modal.js",
+        "corrector.js"
+      ]
     }
   ],
   "action": {
     "default_icon": {
-      "16": "images/tabFlipper16.png",
-      "32": "images/tabFlipper32.png",
-      "48": "images/tabFlipper48.png",
-      "128": "images/tabFlipper128.png"
+      "16": "images/logo.png",
+      "32": "images/logo.png",
+      "48": "images/logo.png",
+      "128": "images/logo.png"
     },
     "default_title": "Press Ctrl(Win)/Command(Mac) + Shift + K to make apear a pop up to correct your text, and manage the extension"
   },
@@ -41,9 +76,9 @@
     }
   },
   "icons": {
-    "16": "images/tabFlipper16.png",
-    "32": "images/tabFlipper32.png",
-    "48": "images/tabFlipper48.png",
-    "128": "images/tabFlipper128.png"
+    "16": "images/logo.png",
+    "32": "images/logo.png",
+    "48": "images/logo.png",
+    "128": "images/logo.png"
   }
 }
