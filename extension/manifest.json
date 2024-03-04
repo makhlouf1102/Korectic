@@ -1,6 +1,6 @@
 {
-  "name": "Korectik",
-  "description": "Uses the chrome.commands API by creating a new keyboard macro for switching tabs in the browser window.",
+  "name": "Korectic",
+  "description": "Correct you text by using one shortcut",
   "version": "1.0",
   "manifest_version": 3,
   "web_accessible_resources": [
